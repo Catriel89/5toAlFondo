@@ -1,7 +1,0 @@
-language: node_js
-node_js:
-  - "iojs"
-  - "7"
-## Agrego para probar pull
-
-npm test
