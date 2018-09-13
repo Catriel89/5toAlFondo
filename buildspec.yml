@@ -13,10 +13,10 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Compiling the Node.js code
-      - mocha ./back/test.js
+      - mocha test.js
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - ./back/app.js
+    - app.js
