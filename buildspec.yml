@@ -5,6 +5,8 @@ phases:
     commands:
       - echo Installing Mocha...
       - npm install -g mocha
+      - echo Installing docker y docker-compose...
+      - npm install -g docker docker-compose
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
@@ -14,9 +16,11 @@ phases:
       - echo Build started on `date`
       - echo Compiling the Node.js code
       - mocha test.js
+      - docker-compose build
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo docker-compose up
+      - docker-compose up
 artifacts:
   files:
     - app.js
