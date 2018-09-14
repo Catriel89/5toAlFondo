@@ -28,19 +28,22 @@ var config = {
   }
 };
 
-console.log(printenv())
 //If it isn't production, use the local env file
-if(!process.env.NODE_ENV || process.env.NODE_ENV.toUpperCase() !== 'PRODUCTION'){
+/*if(!process.env.NODE_ENV || process.env.NODE_ENV.toUpperCase() !== 'PRODUCTION'){
   const env = require('env2')('./config/.env');
-}
+}*/
 
-var PORT = process.env.BACK_PORT;
+/*var PORT = process.env.BACK_PORT;
 var HOST = process.env.HOST;
+*/
+var PORT = BACK_PORT;
+var HOST = HOST;
 
 //mongoose promise os deprecated. Use the global
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URI,{
-  useMongoClient: true
+//mongoose.connect(process.env.MONGO_URI,{
+mongoose.connect(MONGO_URI,{
+        useMongoClient: true
 }).then(
   ()  => { console.log('Successful mongodb connection') 
 },
