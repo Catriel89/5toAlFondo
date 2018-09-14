@@ -14,7 +14,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo mocha test
+ ##     - echo mocha test
 ##      - mocha test.js
       - echo Compiling the Node.js code
       - node app.js
@@ -22,7 +22,7 @@ phases:
       - docker-compose build
   post_build:
     commands:
-      - echo docker-compose up
+      - echo levanta docker compose docker-compose up
       - docker-compose up
 artifacts:
   files:
