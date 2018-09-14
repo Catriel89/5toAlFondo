@@ -10,16 +10,15 @@ phases:
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
-      - npm install unit.js
+      - npm i
   build:
     commands:
       - echo Build started on `date`
       - echo mocha test
-      - mocha test.js
+##      - mocha test.js
       - echo Compiling the Node.js code
-      - mocha app.js
+      - node app.js
       - echo Start and build docker-compose
-      - docker-compose build
       - docker-compose build
   post_build:
     commands:
