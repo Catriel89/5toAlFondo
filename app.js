@@ -30,7 +30,7 @@ var config = {
 
 
 if(!process.env.NODE_ENV || process.env.NODE_ENV.toUpperCase() !== 'PRODUCTION'){
-  const env = require('env2')('./config/.test.json');
+  const env = require('env2')('./config/.env');
 }
 
 var PORT = process.env.BACK_PORT;
